@@ -1,0 +1,160 @@
+.profile_content
+{
+	width: 700px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #5555;
+	box-shadow: 0 0 20px 5px #000;
+	margin: 10px auto;
+	z-index: 2;
+}
+.profile_avatar
+{
+	margin: 10px 275px;
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px 5px #000;
+}
+.profile_username
+{
+	font-size: 25px;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	text-shadow: 0 0 6px #000;
+	box-shadow: 0 0 20px 5px #000;
+	background-color: #3333;
+	border-radius: 10px;
+}
+.profile_email
+{
+	font-size: 25px;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	text-shadow: 0 0 6px #000;
+	box-shadow: 0 0 20px 5px #000;
+	background-color: #3333;
+	border-radius: 10px;
+}
+.profile_textTitle
+{
+	display: flex;
+	justify-content: space-between;
+}
+.profile_text,.profile_change
+{
+	font-size: 25px;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	text-shadow: 0 0 6px #000;
+	border-radius: 10px;
+}
+.profile_change
+{
+	border-radius: 10px;
+	background-color: #3333;
+	box-shadow: 0 0 20px 5px #000;
+	user-select: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	text-decoration: none;
+}
+.profile_change:hover
+{
+	background-color: #06d;
+	box-shadow: 0 0 25px 12px #049;
+}
+.profile_favorite
+{
+	box-shadow: 0 0 20px 5px #000;
+	border-radius: 10px;
+	background-color: #5555;
+	margin: 10px;
+	display: flex;
+	height: 450px;
+	width: 300px;
+	position: relative;
+}
+.profile_title
+{
+	font-size: 35px;
+	text-align: center;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	text-shadow: 0 0 6px #000;
+	border-radius: 10px;
+}
+.profile_favorite img
+{
+	width: 260px;
+	height: 410px;
+	margin: 20px 10px 20px 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 25px 12px #000;
+}
+.profile_favorite_see
+{
+	font-size: 35px;
+	text-shadow: 0 0 6px #000;
+	margin: 320px auto 0 auto;
+	padding: 10px;
+	text-align: center;
+	color: #fff;
+}
+.profile_favorite a
+{
+	opacity: 0;
+	text-decoration: none;
+	transition: all 0.3s;
+	display: flex;
+	border-radius: 10px;
+	background: linear-gradient(180deg,#0000,#000);
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+}
+.profile_favorite a:hover
+{
+	opacity: 1;
+}
+.profile_favoriteFilms
+{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.profile_avatarDiv
+{
+	position: relative;
+}
+.profile_avatarDiv a
+{
+	opacity: 0;
+	text-decoration: none;
+	transition: all 0.3s;
+	display: flex;
+	border-radius: 10px;
+	background-color: #0008;
+	position: absolute;
+	top: 10px;
+	left: 275px;
+	right: 275px;
+	bottom: 13.2px;
+	font-size: 25px;
+	color: #fff;
+	display: flex;
+}
+.profile_avatarDiv a:hover
+{
+	opacity: 1;
+}
+.profile_avatarDiv a p
+{
+	margin: auto;
+}

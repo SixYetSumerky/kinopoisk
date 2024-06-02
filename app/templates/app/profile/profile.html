@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Профиль{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+
+<div class="profile_content">
+	<div class="profile_avatarDiv">
+		{% if request.user.avatar.url != '' %}
+			<img class="profile_avatar" src="{{request.user.avatar.url}}">
+		{% else %}
+			<img class="profile_avatar" src="{% static 'core/img/defaultavatar.svg' %}">
+		{% endif %}
+		<a href="{% url 'profileedit' %}"><p>Изменить</p></a>
+	</div>
+	<div class="profile_textTitle">
+		<p class="profile_text">Логин</p>
+	</div>
+	<p class="profile_username">{{request.user.username}}</p>
+	<div class="profile_textTitle">
+		<p class="profile_text">Имя пользователя</p>
+		<a class="profile_change" href="{% url 'profileedit' %}">Изменить</a>
+	</div>
+	<p class="profile_username">{{request.user.first_name}}</p>
+	<div class="profile_textTitle">
+		<p class="profile_text">Почта</p>
+		<a class="profile_change" href="{% url 'profileedit' %}">Изменить</a>
+	</div>
+	<p class="profile_email">{{request.user.email}}</p>
+</div>
+<p class="profile_title">Любимые фильмы</p>
+<div class="profile_favoriteFilms">
+	{% for movie in request.user.favorite_films.all %}
+		<div class="profile_favorite">
+			<img src="{{movie.poster.url}}">
+			<a href="{% url 'moviedetail' movie_id=movie.id %}">
+				<p class="profile_favorite_see">Смотреть</p>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

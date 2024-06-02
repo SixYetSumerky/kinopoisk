@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Фильм | {{ movie.title }}{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/moviedetail.css' %}">
+<div class="all">
+	<div class="posterDiv">
+		<img src="{{movie.poster.url}}" class="poster">
+		<div id="ratingOut">
+			<div id="ratingIn"></div>
+			<p class="ratingText">{{movie.rating}} / 10</p>
+		</div>
+	</div>
+	<div class="desc">
+		<p class="title">{{movie.title}}</p>
+		<p class="description">{{movie.description}}</p>
+		<div class="gridDiv">
+			<p class="firstGridText">Продолжительность:</p>
+			<p class="firstGridText">{{movie.duration}} минут.</p>
+			<p class="firstGridText">Бюджет:</p>
+			<p class="firstGridText">{{movie.budget}} $.</p>
+			<p class="firstGridText">Дата релиза:</p>
+			<p class="firstGridText" id="date">{{movie.release_date.day}} {{movie.release_date.year}}</p>
+			<script>
+				let months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+				const date=document.getElementById('date');
+				const dateValue=document.getElementById('date').innerHTML;
+				const day=parseInt(dateValue);
+				const year=dateValue.replace(day,'').replace(' ','');
+				date.innerHTML=day+' '+months[{{movie.release_date.month}}]+' '+year+' года';
+			</script>
+		</div>
+		<div class="lists">
+			<div class="actors">
+				<p class="textTitle">Актёры:</p>
+				{% for actor in movie.actors.all %}
+					<a href="" class="textLink">{{actor.name}}</a>
+				{% endfor %}
+			</div>
+			<div class="directors">
+				<p class="textTitle">Режисёры:</p>
+				{% for director in movie.directors.all %}
+					<a href="" class="textLink">{{director.name}}</a>
+				{% endfor %}
+			</div>
+			<div class="genres">
+				<p class="textTitle">Жанры:</p>
+				{% for genre in movie.genres.all %}
+					<a href="{% url 'genredetail' genre_id=genre.id %}" class="textLink">{{genre.name}}</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="filmPlace">
+	<div class="film">
+		{% if movie.video_file.url != null %}
+			<video width="700" height="450" src="{{movie.video_file.url}}" controls></video>
+		{% else %}
+			<iframe width="700" height="450" src="https://video.sibnet.ru/shell.php?videoid={{movie.video}}" frameborder="0" scrolling="no" allowfullscreen></iframe>
+		{% endif %}
+	</div>
+</div>
+<div class="review_content">
+	<link rel="stylesheet" href="{% static 'core/css/review.css' %}">
+	{% if request.user.is_authenticated %}
+		<form action="{% url 'addmoviereview' %}" method="POST" class="review_form">
+			{% csrf_token %}
+			<textarea type='text' name="review" required></textarea>
+			<input type="hidden" name="movieid" value="{{movie.id}}">
+			<div class="review_footer">
+				<p class="review_username">{{request.user.username}}</p>
+				<button class="review_button" type="submit">Оставить отзыв</button>
+			</div>
+		</form>
+	{% endif %}
+	<p class="review_title">Отзывы</p>
+	{% for review in reviews %}
+		<div class="review_review">
+			<p class="review_text">{{review.text}}</p>
+			<div class="review_data">
+				<p class="review_indata">{{review.author}}</p>
+				<p class="review_indata">{{review.created_at}}</p>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<script>
+	document.getElementById('ratingIn').style.width=29*({{movie.rating}})+'px';
+	document.getElementById('ratingIn').style.backgroundColor='rgb('+((10-parseFloat({{movie.rating}}))*25.5)+','+((parseFloat({{movie.rating}}))*25.5)+',0,0.5)';
+</script>
+{% endblock %}

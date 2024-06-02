@@ -1,0 +1,114 @@
+[
+	{
+		"model": "app.genre",
+		"pk": 1,
+		"fields": {
+			"name": "драма",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 2,
+		"fields": {
+			"name": "комедия",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 3,
+		"fields": {
+			"name": "биография",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 4,
+		"fields": {
+			"name": "мелодрама",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 5,
+		"fields": {
+			"name": "история",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 6,
+		"fields": {
+			"name": "военный",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 7,
+		"fields": {
+			"name": "фантастика",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 8,
+		"fields": {
+			"name": "приключения",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 9,
+		"fields": {
+			"name": "боевик",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 10,
+		"fields": {
+			"name": "фэнтези",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 11,
+		"fields": {
+			"name": "мультфильм",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 12,
+		"fields": {
+			"name": "семейный",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 13,
+		"fields": {
+			"name": "триллер",
+			"description": ""
+		}
+	},
+	{
+		"model": "app.genre",
+		"pk": 14,
+		"fields": {
+			"name": "криминал",
+			"description": ""
+		}
+	}
+]

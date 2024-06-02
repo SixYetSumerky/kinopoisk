@@ -1,0 +1,157 @@
+.poster
+{
+	border-radius: 10px;
+	height: 450px;
+	width: 300px;
+	box-shadow: 0 0 20px 5px;
+}
+.all
+{
+	display: flex;
+	padding: 10px;
+}
+.title
+{
+	font-size: 50px;
+	color: #fff;
+	text-shadow: 0 0 15px #000;
+	border-radius: 10px;
+	background-color: #5556;
+	box-shadow: 0 0 20px 5px #000;
+	margin: 0;
+	margin-left: 20px;
+	text-align: center;
+}
+.desc
+{
+	display: block;
+	width: 100%;
+}
+.description
+{
+	font-size: 30px;
+	color: #fff;
+	text-shadow: 0 0 5px #000;
+	border-radius: 10px;
+	background-color: #5556;
+	box-shadow: 0 0 20px 5px #000;
+	margin: 0;
+	margin-left: 20px;
+	margin-top: 20px;
+	text-align: justify;
+	padding: 10px;
+}
+#ratingOut
+{
+	width: 290px;
+	height: 40px;
+	background-color: #3333;
+	box-shadow: 0 0 20px 5px;
+	margin-top: 20px;
+	border-radius: 10px;
+	padding: 5px;
+}
+#ratingIn
+{
+	width: 300px;
+	height: 40px;
+	box-shadow: 0 0 10px 0;
+	border-radius: 10px;
+}
+.ratingText
+{
+	position: absolute;
+	margin: 0;
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 0 0 6px #000;
+	top: 506px;
+	left: 135px;
+	user-select: none;
+}
+.firstGridText
+{
+	font-size: 30px;
+	color: #fff;
+	text-shadow: 0 0 5px #000;
+	border-radius: 10px;
+	background-color: #5556;
+	box-shadow: 0 0 20px 5px #000;
+	margin: 0;
+	margin-left: 20px;
+	margin-top: 20px;
+	text-align: justify;
+	padding: 10px;
+}
+.textTitle
+{
+	font-size: 30px;
+	color: #fff;
+	text-shadow: 0 0 7px #000;
+	border-radius: 10px;
+	background-color: #5555;
+	box-shadow: 0 0 20px 5px #000;
+	text-align: justify;
+	margin: 15px 0 15px 15px;
+	padding: 10px;
+	text-align: center;
+}
+.textLink
+{
+	font-size: 25px;
+	color: #fff;
+	text-shadow: 0 0 5px #000;
+	border-radius: 10px;
+	background-color: #3333;
+	box-shadow: 0 0 10px 2px #000;
+	margin: 0;
+	text-align: justify;
+	margin: 15px 0 15px 15px;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	transition: all 0.3s;
+}
+.textLink:hover
+{
+	background-color: #06d;
+	box-shadow: 0 0 25px 12px #049;
+}
+.lists
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin: 20px 0 0 20px;
+	background-color: #5555;
+	box-shadow: 0 0 20px 5px;
+	border-radius: 10px;
+	padding: 0 15px 0 0;
+}
+.genres,.directors,.actors
+{
+	display: block;
+}
+.gridDiv
+{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+.film
+{
+	margin: 20px auto;
+	width: 700px;
+	height: 450px;
+	box-shadow: 0 0 20px 5px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.filmPlace
+{
+	box-shadow: 0 0 20px 5px;
+	border-radius: 10px;
+	background-color: #5555;
+	margin: 10px;
+	padding: 10px;
+	overflow: hidden;
+}

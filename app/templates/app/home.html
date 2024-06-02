@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+
+<div class="home">
+	<a href="{% url 'movielist' %}">
+		<img src="{% static 'core/img/icons/films.svg' %}">
+		<p>Фильмы</p>
+	</a>
+	<a href="{% url 'personlist' person_role='actor' %}">
+		<img src="{% static 'core/img/icons/actors.svg' %}">
+		<p>Актёры</p>
+	</a>
+	<a href="{% url 'personlist' person_role='director' %}">
+		<img src="{% static 'core/img/icons/actors.svg' %}">
+		<p>Режисёры</p>
+	</a>
+	<a href="{% url 'genrelist' %}">
+		<img src="{% static 'core/img/icons/genres.svg' %}">
+		<p>Жанры</p>
+	</a>
+</div>
+
+{% endblock %}

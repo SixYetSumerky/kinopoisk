@@ -1,0 +1,148 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/css/fallmenu.css' %}">
+<header>
+	<div class="header">
+		<div class="header_menu">
+			<a class="header_menu_buttons header_menu_but_home" href="{% url 'home' %}">
+				<img src="{% static 'core/img/icons/home.svg' %}">
+			</a>
+			<p class="header_menu_buttons header_menu_but_openCloseMenuBut" onclick="header_swapMenuSwitch()">
+				<img id="headerMenuButtonIcon" style="height: 50px; width: 50px;transition: all 0.4s; transform: rotate(180deg);"  src="{% static 'core/img/icons/menuOpenCloseButton.svg' %}">
+			</p>
+		</div>
+	</div>
+	<div id="header_swapMenu">
+		<div class="header_swapMenu">
+			<div class="header_nav">
+				<div>
+					<a href="{% url 'movielist' %}">
+						<img src="{% static 'core/img/icons/films.svg' %}">
+					</a>
+					<a href="{% url 'personlist' person_role='actor' %}">
+						<img src="{% static 'core/img/icons/actors.svg' %}">
+					</a>
+					<a href="{% url 'personlist' person_role='director' %}">
+						<img src="{% static 'core/img/icons/actors.svg' %}">
+					</a>
+					<a href="{% url 'genrelist' %}">
+						<img src="{% static 'core/img/icons/genres.svg' %}">
+					</a>
+				</div>
+			</div>
+			<div class="header_profile">
+				{% if not request.user.is_authenticated %}
+					<div class="fallMenuButton">
+						<p class="button" onclick="fallMenu('log')">Вход</p>
+					</div>
+				{% else %}
+					<link rel="stylesheet" href="{% static 'core/css/user.css' %}">
+					<div class="user_content">
+						{% if request.user.avatar.url != '' %}
+							<img class="user_avatar" src="{{request.user.avatar.url}}">
+						{% else %}
+							<img class="user_avatar" src="{% static 'core/img/defaultavatar.svg' %}">
+						{% endif %}
+						<p class="user_username">{{request.user.first_name}}</p>
+					</div>
+					<div class="buttons">
+						<a class="button1" href="{% url 'profile' %}"><p>Профиль</p></a>
+						<a class="button2" href="{% url 'logout' %}"><p>Выход</p></a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% if not request.user.is_authenticated %}
+	<div class="fallMenu" id="fallMenu">
+		<div class="fallMenuClose" onclick="fallMenu('close')"><img src="{% static 'core/img/icons/menuOpenCloseButton.svg' %}"></div>
+		<div class="fallmenuContent">
+			<div class="fallMenu_iframe">
+				<p class="fallMenu_iframe_text1">Уже есть аккаунт?</p>
+				<p class="fallMenu_iframe_button1" onclick="fallMenu('log')">Вход</p>
+				<p id="error1">Пароли не совпадают.</p>
+				<p class="fallMenu_iframe_text2">Нет аккаунта?</p>
+				<p class="fallMenu_iframe_button2" onclick="fallMenu('reg')">Регистрация</p>
+				<p id="error2">Неверный логин или пароль.</p>
+			</div>
+			<div class="fallMenu_log">
+				<link rel="stylesheet" href="{% static 'core/css/log.reg.css' %}">
+				{% if error %}
+				{% endif %}
+				<form method="POST" action="{% url 'log' %}">
+					{% csrf_token %}
+					<p>Логин</p>
+					<input type="text" name="login" required value="{{logusername}}">
+					<p>Пароль</p>
+					<input type="password" name="password" required>
+					<button type="submit">Вход</button>
+				</form>
+			</div>
+			<div class="fallMenu_reg">
+				{% if error %}
+				{% endif %}
+				<form method="POST" action="{% url 'reg' %}">
+					{% csrf_token %}
+					<p>Логин</p>
+					<input type="text" name="login" required value="{{login}}">
+					<p>Почта</p>
+					<input type="email" name="email" required value="{{email}}">
+					<p>Пароль</p>
+					<input type="password" name="password" required>
+					<p>Повторите пароль</p>
+					<input type="password" name="repeatpassword" required>
+					<button type="submit">Регистрация</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'core/js/fallmenu.js' %}"></script>
+	{% endif %}
+	<p class="globalVar_sumbit" style="display: none;">{{error}}</p>
+</header>
+<script>
+	function headerShadowSwitch()
+	{
+		if(window.scrollY==0)
+		{
+			document.querySelector('.header').style.boxShadow='0 0 0 0';
+		}
+		else
+		{
+			document.querySelector('.header').style.boxShadow='0 0 20px 5px';
+		}
+		setTimeout(headerShadowSwitch,20);
+	}
+	headerShadowSwitch();
+</script>
+<script>
+	function header_swapMenuSwitch()
+	{
+		if(document.querySelector('#header_swapMenu').style.transform=='translateX(0px)')
+		{
+			document.querySelector('#header_swapMenu').style.transform='translateX('+406+'px)';
+			document.querySelector('.header').style.right='6px';
+			document.querySelector('#header_swapMenu').style.boxShadow='0 0 0 0';
+			headerShadowSwitch('button');
+			setTimeout(rotate,300);
+		}
+		else
+		{
+			document.querySelector('#header_swapMenu').style.transform='translateX(0px)';
+			document.querySelector('.header').style.right='412px';
+			document.querySelector('#header_swapMenu').style.boxShadow='0 0 20px 3px';
+			headerShadowSwitch('button');
+			setTimeout(rotate,300);
+		}
+		function rotate()
+		{
+			if(document.querySelector('#header_swapMenu').style.transform=='translateX(0px)')
+			{
+				document.querySelector('#headerMenuButtonIcon').style.transform='rotate(360deg)';
+			}
+			else
+			{
+				document.querySelector('#headerMenuButtonIcon').style.transform='rotate(180deg)';
+			}
+		}
+	}
+</script>

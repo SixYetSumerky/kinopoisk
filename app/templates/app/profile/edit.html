@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Профиль{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/edit.css' %}">
+
+<form action="" method="POST">
+	{% csrf_token %}
+	<p class="profile_warning">Для сохранения старого значения поля не заполняйте его.</p>
+	<p class="profile_text">Новое имя пользователя</p>
+	<input class="profile_input" type="text" name="first_name">
+	<p class="profile_text">Новая почта</p>
+	<input class="profile_input" type="email" name="email">
+	{% comment %}
+	<p class="profile_text">Новый пароль</p>
+	<input class="profile_input" type="password" name="password">
+	<p class="profile_text">Повторите новый пароль</p>
+	<input class="profile_input" type="password" name="repeatpassword">
+	{% endcomment %}
+	<button type="submit">Подтвердить</button>
+	<input type="file" name="icon">
+</form>
+
+{% endblock %}

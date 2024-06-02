@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Жанры{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/genres.css' %}">
+
+<div class="main_genres">
+	{% for genre in genres %}
+	<div class="genreDiv">
+		<p class="main_genre">{{genre.name}}</p>
+		<a href="{% url 'genredetail' genre_id=genre.id %}" class="main_genre_link_desc">Подробнее</a>
+		<a href="{% url 'genredetail' genre_id=genre.id %}" class="main_genre_link_films">Фильмы</a>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

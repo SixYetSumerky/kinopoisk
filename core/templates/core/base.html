@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+		<link rel="icon" href="{% static 'core/img/altbg.png' %}">
+	</head>
+	<body>
+		<style>@font-face{font-family: 'customfont';src: url('{% static "core/font/calibri.ttf" %}');}p,a,button{font-family: 'customfont';}</style>
+		<img class="altbg_img" src="{% static 'core/img/altbg.png' %}">
+		<script>
+			if(window.innerHeight==window.innerWidth)
+			{
+				document.querySelector('.altbg_img').style.width='100%';
+				document.querySelector('.altbg_img').style.height='100%';
+			}
+			if(window.innerWidth>window.innerHeight)
+			{
+				document.querySelector('.altbg_img').style.width='100%';
+				document.querySelector('.altbg_img').style.height=100*(1/(window.innerHeight/window.innerWidth))+'%';
+				document.querySelector('.altbg_img').style.top='-'+(window.innerWidth-window.innerHeight)/2+'px';
+			}
+			if(window.innerWidth<window.innerHeight)
+			{
+				document.querySelector('.altbg_img').style.height='100%';
+				document.querySelector('.altbg_img').style.width=100*(window.innerHeight/window.innerWidth)+'%';
+				document.querySelector('.altbg_img').style.left='-'+(window.innerHeight-window.innerWidth)/2+'px';
+			}
+		</script>
+		{% include 'core/includes/header.html' %}
+		<main>
+			{% block content %}
+			{% endblock %}
+		</main>
+		{% include 'core/includes/footer.html' %}
+	</body>
+</html>

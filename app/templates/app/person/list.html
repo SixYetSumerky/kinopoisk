@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/person.css' %}">
+
+<div class="main_actors">
+	{% for person in persons %}
+	<div href="" class="main_actors_block">
+		<a href="" class="main_actors_button">Подробно</a>
+		<div class="main_actors_imgDiv">
+			<img src="{{person.photo.url}}" class="main_actors_img">
+		</div>
+		<p class="main_actors_name">{{person.name}}</p>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

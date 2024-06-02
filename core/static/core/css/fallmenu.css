@@ -1,0 +1,108 @@
+.fallMenu
+{
+	position: fixed;
+	background-color: #0008;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 110;
+	backdrop-filter: blur(5px);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	transform: translateX(-9999px);
+	transition: all 0.3s;
+}
+.fallMenuClose
+{
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	transform: rotate(180deg);
+	box-shadow: 0 0 20px 5px #000;
+	width: 70px;
+	height: 70px;
+	border-radius: 10px;
+	background-color: #5555;
+	display: flex;
+	transition: all 0.3s;
+}
+.fallMenuClose:hover
+{
+	cursor: pointer;
+	background-color: #06d;
+	box-shadow: 0 0 25px 12px #049;
+}
+.fallMenuClose img
+{
+	margin: auto;
+}
+.fallmenuContent
+{
+	position: absolute;
+	background-color: #5555;
+	border-radius: 10px;
+	z-index: 111;
+	margin: auto;
+	width: 1000px;
+	height: 600px;
+	box-shadow: 0 0 20px 5px #000;
+	display: flex;
+}
+.fallMenu_iframe
+{
+	overflow: hidden;
+	height: 580px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px 5px #000;
+	background-color: #555;
+	width: 480px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 121;
+	transition: all 0.3s;
+}
+.fallMenu_reg,.fallMenu_log
+{
+	width: 500px;
+	height: 600px;
+	z-index: 120;
+	position: relative;
+}
+.fallMenu_iframe_text1,.fallMenu_iframe_text2,.fallMenu_iframe_button1,.fallMenu_iframe_button2
+{
+	color: #fff;
+	border-radius: 10px;
+	width: 300px;
+	padding: 10px;
+	text-align: center;
+	position: absolute;
+	top: 350px;
+	text-shadow: 0 0 6px #000;
+	font-size: 30px;
+	transition: all 0.3s;
+}
+.fallMenu_iframe_text1,.fallMenu_iframe_button1
+{
+	left: 80px;
+}
+.fallMenu_iframe_text2,.fallMenu_iframe_button2
+{
+	left: 580px;
+}
+.fallMenu_iframe_button1,.fallMenu_iframe_button2
+{
+	background-color: #555;
+	font-size: 25px;
+	box-shadow: 0 0 15px 5px #000;
+	cursor: pointer;
+	top: 450px;
+	transition: all 0.3s;
+}
+.fallMenu_iframe_button1:hover,.fallMenu_iframe_button2:hover
+{
+	background-color: #06d;
+	box-shadow: 0 0 15px 5px #049;
+}

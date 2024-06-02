@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="defaultavatar.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showguides="false"
+     inkscape:zoom="11.588215"
+     inkscape:cx="29.814773"
+     inkscape:cy="32.144726"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 0,0 v 0 50 0 H 50 V 50 0 0 Z M 25,9.3808594 C 28.87036,9.380733 32.007939,12.518312 32.007812,16.388672 32.007938,20.259032 28.87036,23.39661 25,23.396484 21.12964,23.396611 17.992061,20.259032 17.992187,16.388672 17.99206,12.518311 21.129639,9.3807324 25,9.3808594 Z M 24.9668,24.623047 c 11.678868,0 17.171933,11.637089 15.078125,15.263672 -1.442785,2.498974 -28.680104,2.553376 -30.154297,0 C 7.9741129,36.567221 13.52622,24.623047 24.966797,24.623047 Z"
+       style="opacity:1;fill:#ffffff"
+       id="path1"
+       sodipodi:nodetypes="ccccccccccccccsssss" />
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+form
+{
+	width: 460px;
+	height: 560px;
+	position: relative;
+	padding: 20px;
+}
+form p
+{
+	margin: 0 auto;
+	color: #fff;
+	font-size: 25px;
+	text-shadow: 0 0 6px #000;
+}
+form input
+{
+	color: #fff;
+	border-radius: 10px;
+	background-color: #5554;
+	font-size: 25px;
+	box-shadow: 0 0 15px 3px #000;
+	transition: all 0.3s;
+	cursor: text;
+	border: 1px solid #000;
+	width: 440px;
+	padding: 10px;
+	margin: 15px 0;
+	text-shadow: 0 0 6px #000;
+}
+form button
+{
+	color: #fff;
+	border: none;
+	box-shadow: 0 0 20px 5px #000;
+	font-size: 25px;
+	width: 230px;
+	border-radius: 10px;
+	background-color: #5555;
+	padding: 10px;
+	margin: 10px 115px;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+form button:hover
+{
+	background-color: #06d;
+	box-shadow: 0 0 25px 12px #049;
+}
+form input:hover
+{
+	background-color: #5558;
+}
+form input:focus
+{
+	background-color: #555c;
+	outline: none;
+}
+#error1,#error2
+{
+	font-size: 25px;
+	color: #fff;
+	background-color: #f009;
+	text-shadow: 0 0 6px #000;
+	box-shadow: 0 0 20px 5px #000;
+	margin: 20px 20px -10px 20px;
+	border-radius: 10px;
+	width: 420px;
+	padding: 10px;
+	display: none;
+	position: absolute;
+	left: 0;
+	transition: all 0.3s;
+}
+#error1
+{
+	left: 500px;
+}

@@ -1,0 +1,71 @@
+.profile_text,.profile_input
+{
+	font-size: 25px;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+form
+{
+	text-shadow: 0 0 6px #000;
+	border-radius: 10px;
+	box-shadow: 0 0 20px 5px #000;
+	background-color: #5555;
+	width: 500px;
+	margin: 10px auto;
+	padding: 10px;
+}
+.profile_warning
+{
+	font-size: 20px;
+	box-shadow: 0 0 20px 5px #000;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	background-color: #cc07;
+}
+.profile_input
+{
+	color: #fff;
+	border-radius: 10px;
+	background-color: #5554;
+	font-size: 25px;
+	box-shadow: 0 0 15px 3px #000;
+	transition: all 0.3s;
+	cursor: text;
+	border: 1px solid #000;
+	width: 460px;
+	padding: 10px;
+	margin: 5px 10px;
+	text-shadow: 0 0 6px #000;
+}
+.profile_input:hover
+{
+	background-color: #5558;
+}
+.profile_input:focus
+{
+	background-color: #555c;
+	outline: none;
+}
+form button
+{
+	color: #fff;
+	border: none;
+	box-shadow: 0 0 20px 5px #000;
+	font-size: 25px;
+	width: 230px;
+	border-radius: 10px;
+	background-color: #5555;
+	padding: 10px;
+	margin: 20px 135px 10px 135px;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+form button:hover
+{
+	background-color: #06d;
+	box-shadow: 0 0 25px 12px #049;
+}

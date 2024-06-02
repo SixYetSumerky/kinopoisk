@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Фильмы{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'core/css/card.css' %}">
+<div class="main_films">
+	{% for movie in movies %}
+	<div class="main_film_block">
+		<img class="main_film_poster" src="{{movie.poster.url}}">
+		<div>
+			<p class="main_film_title">{{movie.title}}</p>
+			<div class="main_film_descDiv">
+				<p class="main_film_desc">{{movie.description}}</p>
+			</div>
+			<div style="display: flex; height: 70px;">
+				<div class="main_film_rating_out">
+					<div class="main_film_rating_in" id="rating_{{movie.id}}">
+						<p class="main_film_rating">{{movie.rating}} / 10</p>
+					</div>
+				</div>
+				<a href="{% url 'moviedetail' movie_id=movie.id %}" class="main_film_button">Смотреть</a>
+			</div>
+		</div>
+		<script>
+			document.getElementById('rating_{{movie.id}}').style.width=49*({{movie.rating}})+'px';
+			document.getElementById('rating_{{movie.id}}').style.backgroundColor='rgb('+((10-parseFloat({{movie.rating}}))*25.5)+','+((parseFloat({{movie.rating}}))*25.5)+',0,0.5)';
+		</script>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
